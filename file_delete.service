@@ -1,0 +1,14 @@
+[Unit]
+Description=Wakeup service
+After=network.target
+
+[Service]
+ExecStart=/home/pi/berryconda3/bin/python -u /home/pi/wakeupservice.py
+WorkingDirectory=/home/pi/
+StandardOutput=inherit
+StandardError=inherit
+Restart=always
+User=pi
+
+[Install]
+WantedBy=multi-user.target
